@@ -116,6 +116,13 @@ class ClickUp:
         request = self._req(path, method="put", **kwargs)
         return request if raw else request.json()
 
+    def delete(
+        self, path: str, raw: bool = False, **kwargs: Any
+    ) -> Union[list, dict, Response]:
+        """makes a put request to the API"""
+        request = self._req(path, method="delete", **kwargs)
+        return request if raw else request.json()
+
     def _get_tasks(
         self,
         team_id: str,
