@@ -283,6 +283,14 @@ class Team(BaseModel):
         we have to do these this way
         """
         return [x for x in self.spaces if x.id == space_id][0]
+    
+    def get_space_name(self, space_name: str) -> Space:
+        """
+        gets a space by it's name.
+        Currently there is no get API call for this, so until API v2 is live,
+        we have to do these this way
+        """
+        return [x for x in self.spaces if x.name == space_name][0]
 
     def get_tasks(self, **kwargs):
         """gets tasks for the team"""
