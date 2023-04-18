@@ -405,7 +405,14 @@ class Task(BaseModel):
         else:
             return False
 
-
+    def list_tags(self):
+        return [x["name"] for x in self._data["tags"]]
+    
+    def has_tag(self,tag):
+        if tag in [x["name"] for x in self._data["tags"]]:
+            return True
+        else:
+            return False
 
     def update(
         self,
