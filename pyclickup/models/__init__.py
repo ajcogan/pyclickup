@@ -413,7 +413,10 @@ class Task(BaseModel):
             return True
         else:
             return False
-
+       
+    def show_list(self):
+        return self._data["list"]["name"]
+    
     def update(
         self,
         name: str = None,  # string
