@@ -196,6 +196,9 @@ class Project(BaseModel):
         """
         return [x for x in self.lists if x.name == list_name][0]
 
+    def show_all_lists(self) -> List:
+        return [x.name for x in self.lists]
+    
     def get_tasks(self, **kwargs):
         """gets tasks for the project"""
         return self._client._get_tasks(
